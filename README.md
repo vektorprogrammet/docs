@@ -6,7 +6,16 @@ Javascript is a multi-paradigm language which gives the users full freedom over 
 This is a very double-edged sword within teams.\
 That is why we have written this handbook to standardise our practices and provide a place for members to look up what to do if they are confused.
 
-### Modular programming | Programming paradigm
+**How to read this handbook**
+
+If you just want to learn our rules/guidelines and don't care for the explanations,
+take a quick look at the outline/headers.
+
+In the headers we try to summarise the points into quick imperative commands,
+then articulate **why** in the body of the section.\
+Optionally, a category name is added to clearly categorise what topic we are talking about.
+
+### Use modular programming | Programming Paradigm
 
 We try to make our code as modular as possible as it is the most maintainable programming paradigm and most idiomatic for Javascript.
 
@@ -55,9 +64,7 @@ Within a web project, routes and pages are (basically) the only state modules.
 
 <!-- Called out by linter -->
 
-### Variable declaration
-
-#### Never use `var`. Default to `const`. Use `let` if reassignment is needed
+#### Never use `var`. Always use `const` or `let` if reassignment is needed | Variable declaration
 
 Using `var` for variable declarations is widely accepted as bad practice.
 
@@ -66,9 +73,9 @@ This leads to confusing and unintuitive behavior.
 
 TODO: Give some examples
 
-### Always use triple equals `===` over double equals `==`
+### Always use triple equals `===` over double equals `==` | Equality Checks
 
-### `async` `await` or promises?
+### `async` `await` or promises? | Asynchronous operations
 
 Use whichever syntax makes the code more readable.
 
@@ -79,7 +86,7 @@ What operations are essentially equivalent and what operations execute different
 
 [Async await vs promises - StackOverflow](https://stackoverflow.com/questions/53057110/difference-of-using-async-await-vs-promises)
 
-### Write closures, not classes
+### Write closures, not classes | Data Encapsulation
 <!-- Not called out by linter -->
 > Why not write classes?
 
