@@ -1,12 +1,12 @@
 # docs
 
-## Code style handbook
+## Code style guide
 
-Javascript is a multi-paradigm language which gives the users full freedom over how to write their code.\
+JavaScript/TypeScript (JS/TS) is a multi-paradigm language which gives the users full freedom over how to write their code.\
 This is a very double-edged sword within teams.\
 That is why we have written this handbook to standardise our practices and provide a place for members to look up what to do if they are confused.
 
-**How to read this handbook**
+**How to read this guide**
 
 If you just want to learn our rules/guidelines and don't care for the explanations,
 take a quick look at the outline/headers.
@@ -15,11 +15,24 @@ In the headers we try to summarise the points into quick imperative commands,
 then articulate **why** in the body of the section.\
 Optionally, a category name is added to clearly categorise what topic we are talking about.
 
-### Use modular programming | Programming Paradigm
+### General philosophy
+
+#### Prioritise readability over performance
+
+TODO: make this section better, add examples of good times to optimise f. eks.
+
+While performance is important, most optimisations are brilliantly automated by engineers far better than ourselves.\
+Trying to optimise our code most often reduces readability both for our team members,
+and for the compiler tasked with optimising our code.\
+Mind you, this doesn't mean write shit code.\
+What it means is don't try to be cute,\
+Keep It Simple Stupid (KISS).
+
+#### Use modular programming | Programming Paradigm
 
 We try to make our code as modular as possible as it is the most maintainable programming paradigm and most idiomatic for Javascript.
 
-[Modular Programming | How to write good procedural code - YouTube](https://www.youtube.com/watch?v=0iyB0_qPvWk)
+[Modular Programming | How to write good procedural code - YouTube, Brian Will](https://www.youtube.com/watch?v=0iyB0_qPvWk)
 
 [Difference between modular programming and object-oriented programming - StackOverflow](https://stackoverflow.com/questions/18034683/what-is-the-big-difference-between-modular-and-object-oriented-programming)
 
@@ -30,7 +43,7 @@ This requires understanding the problem you are trying to solve and using the be
 So emulating that behavior in the structure of our code is most beneficial
 -->
 
-#### Why not Object-Oriented Programming(OOP)?
+##### Why not Object-Oriented Programming(OOP)?
 
 Because it sucks and makes it even harder to maintain a codebase (its hard enough to use Javascript in a team).
 
@@ -41,9 +54,11 @@ which might ironically make you better at writing good OOP code for when you ine
 
 TODO: Write something about how to write good functional good for logic modules
 
-#### Logic modules
+##### Minimise state modules, maximise logic modules
 
-Logic modules should **not** contain global mutable variables.
+In JS/TS 
+
+##### Logic modules should not contain global mutable variables
 
 Logic modules should contain:
 
@@ -52,17 +67,24 @@ Logic modules should contain:
 - pure functions
 - function closures (instead of classes) [Write closures, not classes](#write-closures-not-classes)
 
-#### State modules
+##### `main` is always a state module
 
-`main` is **always** a state module.
+Within a web project, routes and pages should be the only state modules.
 
-Within a web project, routes and pages are (basically) the only state modules.
-
-#### Create modular programs by reducing state modules and maximising logic modules
+#### The only state our web server should depend on is the state of our database.
 
 #### Optimistically favor pure functions
 
+Pure functions are functions where the output only differ if its input differ.\
+This means calling the functions repeatedly with the same arguments should **always** return the same results.
+
+This lets us rewrite the entire workings of the inner function body,
+as long as we make sure the output stays the same.\
+This drastically improves predictability which also makes the codebase easier to maintain.
+
 <!-- Called out by linter -->
+
+### JavaScript / TypeScript
 
 #### Never use `var`. Always use `const` or `let` if reassignment is needed | Variable declaration
 
@@ -73,9 +95,9 @@ This leads to confusing and unintuitive behavior.
 
 TODO: Give some examples
 
-### Always use triple equals `===` over double equals `==` | Equality Checks
+#### Always use triple equals `===` over double equals `==` | Equality Checks
 
-### `async` `await` or promises? | Asynchronous operations
+#### `async` `await` or promises? | Asynchronous operations
 
 Use whichever syntax makes the code more readable.
 
@@ -86,12 +108,30 @@ What operations are essentially equivalent and what operations execute different
 
 [Async await vs promises - StackOverflow](https://stackoverflow.com/questions/53057110/difference-of-using-async-await-vs-promises)
 
-### Write closures, not classes | Data Encapsulation
+#### Write closures, not classes | Data Encapsulation
 <!-- Not called out by linter -->
 > Why not write classes?
 
 Writing function closures instead of classes is more representative of what happens under the hood.
 
-Function closures also has the benefit of avoiding the extremely confusing `this` keyword in Javascript and instead just reference variables directly.
+Function closures also has the benefit of avoiding the extremely confusing `this` keyword in JS/TS and instead just reference variables directly.
 
 [Closures vs classes - StackOverflow](https://stackoverflow.com/questions/71670779/closures-vs-classes-in-modern-javascript)
+
+### React
+
+[Essential Typescript for React - Blogpost, Jacob Paris](https://www.jacobparis.com/content/react-ts)
+
+#### Type `children` prop with ReactNode
+
+## Writing style guide
+
+### Keep it precise and concise
+
+We are not writing a book.\
+We are writing a guide one should be able to skim through and get the gist of it.
+
+### Headings containing subheadings should usually tell us what subject or category the subheadings are about.
+
+### Subheadings should be written in imperative commands, like git commits
+
