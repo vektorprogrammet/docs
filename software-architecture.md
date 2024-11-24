@@ -4,6 +4,33 @@ Vektorprogrammets software architecture visualised with the [C4 Model](https://c
 
 ## System Context
 
+```mermaid
+C4Context
+title Vektorprogrammet v2 System context
+
+  Person(assistant, "Assistent")
+  Person(team, "Intern Teammedlem", "Medlem av en av Vektors flere interne teams")
+  Person(visitor, "Besøkende", "En nysgjerrig forelder eller skolerepresentant")
+
+  Rel(assistant, web, "Besøker")
+  Rel(team, web, "Bruker")
+  Rel(visitor, web, "Besøker")
+
+  Boundary(vektor, "Vektorprogrammet") {
+    System(web, "Web", "Vektor websystem")
+  }
+
+  BiRel(web, auth, "User authentication")
+  BiRel(web, email, "Sender mail med")
+
+  Boundary(ext, "Eksterne servicer") {
+    System_Ext(auth, "Clerk Authentication")
+    System_Ext(email, "Resend Email Service")
+  }
+  
+  UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
+```
+
 ### C4Context
 
 ```mermaid
@@ -52,6 +79,12 @@ Vektorprogrammets software architecture visualised with the [C4 Model](https://c
 ```
 
 ## Containers
+
+```mermaid
+C4Container
+title Vektor Web
+
+```
 
 ### C4Container
 
