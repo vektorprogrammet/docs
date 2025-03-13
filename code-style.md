@@ -1,159 +1,174 @@
 # Code style guide
 
+VektorIT's code style which cannot be enforced using linters or formatters.
+
 - [Code style guide](#code-style-guide)
-  - [Intro](#intro)
-  - [General philosophy](#general-philosophy)
-    - [Prioritise readability over performance](#prioritise-readability-over-performance)
-    - [Use modular programming | Programming Paradigm](#use-modular-programming--programming-paradigm)
-      - [Why not Object-Oriented Programming(OOP)?](#why-not-object-oriented-programmingoop)
-      - [Minimise state modules, maximise logic modules](#minimise-state-modules-maximise-logic-modules)
-      - [Logic modules should not contain global mutable variables](#logic-modules-should-not-contain-global-mutable-variables)
-      - [`main` is always a state module](#main-is-always-a-state-module)
-    - [The only state our web server should depend on is the state of our database.](#the-only-state-our-web-server-should-depend-on-is-the-state-of-our-database)
-    - [Optimistically favor pure functions](#optimistically-favor-pure-functions)
-  - [JavaScript / TypeScript](#javascript--typescript)
-    - [Never use `var`. Always use `const` or `let` if reassignment is needed | Variable declaration](#never-use-var-always-use-const-or-let-if-reassignment-is-needed--variable-declaration)
-    - [Always use triple equals `===` over double equals `==` | Equality Checks](#always-use-triple-equals--over-double-equals---equality-checks)
-    - [`async` `await` or promises? | Asynchronous operations](#async-await-or-promises--asynchronous-operations)
-    - [Write closures, not classes | Data Encapsulation](#write-closures-not-classes--data-encapsulation)
+  - [Principles](#principles)
+    - [Readibility is priority number one](#readibility-is-priority-number-one)
+    - [Follow conventions, only break them for VERY good reasons](#follow-conventions-only-break-them-for-very-good-reasons)
+    - [Minimise scope when possible](#minimise-scope-when-possible)
+  - [Organising your projects](#organising-your-projects)
+    - [Prefer long files over many smaller files](#prefer-long-files-over-many-smaller-files)
+    - [Avoid folders unless they enhance readability](#avoid-folders-unless-they-enhance-readability)
+    - [Prefer co-location over categorisation (separation of concerns)](#prefer-co-location-over-categorisation-separation-of-concerns)
+  - [TypeScript](#typescript)
+    - [Write pure functions when possible](#write-pure-functions-when-possible)
+    - [Avoid explicit type declaration when types can be inferred](#avoid-explicit-type-declaration-when-types-can-be-inferred)
+    - [Variable names are camelCase](#variable-names-are-camelcase)
+    - [Type names are PascalCase](#type-names-are-pascalcase)
   - [React](#react)
-    - [Type `children` prop with ReactNode](#type-children-prop-with-reactnode)
-  - [Writing style guide](#writing-style-guide)
-    - [Keep it precise and concise](#keep-it-precise-and-concise)
-    - [Headings containing subheadings should usually tell us what subject or category the subheadings are about.](#headings-containing-subheadings-should-usually-tell-us-what-subject-or-category-the-subheadings-are-about)
-    - [Subheadings should be written in imperative commands, like git commits](#subheadings-should-be-written-in-imperative-commands-like-git-commits)
+    - [Follow the Rules of React](#follow-the-rules-of-react)
+    - [Component names are PascalCased](#component-names-are-pascalcased)
+    - [Declare named functions over anonymous functions](#declare-named-functions-over-anonymous-functions)
+    - [ReactNode or ReactElement?](#reactnode-or-reactelement)
 
-## Intro
+## Principles
 
-JavaScript/TypeScript (JS/TS) is a multi-paradigm language which gives the users full freedom over how to write their code.\
-This is a very double-edged sword within teams.\
-That is why we have written this handbook to standardise our practices and provide a place for members to look up what to do if they are confused.
+### Readibility is priority number one
 
-**How to read this guide**
+The computer can read extremely ugly code and still know what to do.\
+Humans (and LLMs) have a way harder time reading code than compilers.\
+This is why we make sure we write code which can be understood by people,\
+which keeps the projects easy to maintain.
 
-If you just want to learn our rules/guidelines and don't care for the explanations,
-take a quick look at the outline/headers.
+### Follow conventions, only break them for VERY good reasons
 
-In the headers we try to summarise the points into quick imperative commands,
-then articulate **why** in the body of the section.\
-Optionally, a category name is added to clearly categorise what topic we are talking about.
+Helps with readability for both humans and LLMs.
 
-## General philosophy
+### Minimise scope when possible
 
-### Prioritise readability over performance
+Scope is about where variables are accessible.
+By minimising it, we reduce the amount of variables one needs to keep in their head as they are reading it.
 
-TODO: make this section better, add examples of good times to optimise f. eks.
+## Organising your projects
 
-While performance is important, most optimisations are brilliantly automated by engineers far better than ourselves.\
-Trying to optimise our code most often reduces readability both for our team members,
-and for the compiler tasked with optimising our code.\
-Mind you, this doesn't mean write shit code.\
-What it means is don't try to be cute,\
-Keep It Simple Stupid (KISS).
+This section focuses on how to structure your files and folders.
 
-### Use modular programming | Programming Paradigm
+### Prefer long files over many smaller files
 
-We try to make our code as modular as possible as it is the most maintainable programming paradigm and most idiomatic for Javascript.
+If one features is organized into multiple components,
+keep the components within the same file until another file needs to import it.
 
-[Modular Programming | How to write good procedural code - YouTube, Brian Will](https://www.youtube.com/watch?v=0iyB0_qPvWk)
+By not exporting variables immaturely,
+we minimise the variables' scope without adding restrictions or unnecessary folders.
 
-[Difference between modular programming and object-oriented programming - StackOverflow](https://stackoverflow.com/questions/18034683/what-is-the-big-difference-between-modular-and-object-oriented-programming)
+### Avoid folders unless they enhance readability
 
-<!--
-In the end, paradigms are tools for solving the problem of writing programs.\
-This requires understanding the problem you are trying to solve and using the best possible solution.\
-**Most** programs is about transforming data from one shape to another.\
-So emulating that behavior in the structure of our code is most beneficial
--->
+### Prefer co-location over categorisation (separation of concerns)
 
-#### Why not Object-Oriented Programming(OOP)?
+Instead of grouping files by categories easily readable for computers,
+group them by their relation to other files for better human readability.
 
-Because it sucks and makes it even harder to maintain a codebase (its hard enough to use Javascript in a team).
+Don't do this:
 
-If you want to learn more about why OOP sucks I highly recommend this video by Brian Will,
-which might ironically make you better at writing good OOP code for when you inevitably get a corporate job.
+- `/`
+  - `/html`
+    - `index.html`
+    - `profile.html`
+    - `sign-in.html`
+    - `sign-out.html`
+  - `/css`
+    - `index.css`
+    - `profile.css`
+    - `sign-in.css`
+    - `sign-out.css`
+    - `layout.css`
+  - `/js`
+    - `index.js`
+    - `profile.js`
+    - `auth.js`
+    - `utils.js`
 
-[Object-Oriented Programming is Bad - YouTube, Brian Wil](https://youtu.be/QM1iUe6IofM)
+Do this instead:
 
-TODO: Write something about how to write good functional good for logic modules
+- `/`
+  - `/features`
+    - `/auth`
+      - `auth.js`
+      - `/sign-in`
+        - `sign-in.html`
+        - `sign-in.css`
+      - `/sign-out`
+        - `sign-out.html`
+        - `sign-out.css`
+  - `/pages`
+    - `layout.css`
+    - `/index`
+      - `index.html`
+      - `index.css`
+      - `index.js`
+    - `/profile`
+      - `profile.html`
+      - `profile.css`
+  - `/lib`
+    - `utils.js`
 
-#### Minimise state modules, maximise logic modules
+From the structure alone, we can infer that
 
-In JS/TS
+- `auth.js` is only used within the `/auth` folder
+- `layout.css` is only used within the `/pages` folder
+- `/lib` and `/features`s contents are accessible within the whole repository, as they are placed at the root level of the repository
 
-#### Logic modules should not contain global mutable variables
+Files and folders are assumed to have access to files and folders within the same directory(folder). You can imagine in your head that the scope of files trickle down subfolders like a waterfall.
 
-Logic modules should contain:
+Better to spend extra time thinking about organisation and how the code relates to other code instead of slapping it into a folder letting it rot until some other poor soul has to decipher what files relates to what.
 
-- constant values
-- types
-- pure functions
-- function closures (instead of classes) [Write closures, not classes](#write-closures-not-classes)
+## TypeScript
 
-#### `main` is always a state module
+### Write pure functions when possible
 
-Within a web project, routes and pages should be the only state modules.
+A pure function is one where the result only depends on its arguments.
 
-### The only state our web server should depend on is the state of our database.
+### Avoid explicit type declaration when types can be inferred
 
-### Optimistically favor pure functions
+```diff
+- function Component(): ReactNode {
++ function Component() {
+  ...
+}
+```
 
-Pure functions are functions where the output only differ if its input differ.\
-This means calling the functions repeatedly with the same arguments should **always** return the same results.
+### Variable names are camelCase
 
-This lets us rewrite the entire workings of the inner function body,
-as long as we make sure the output stays the same.\
-This drastically improves predictability which also makes the codebase easier to maintain.
+By JavaScript convention.
 
-<!-- Called out by linter -->
+### Type names are PascalCase
 
-## JavaScript / TypeScript
-
-### Never use `var`. Always use `const` or `let` if reassignment is needed | Variable declaration
-
-Using `var` for variable declarations is widely accepted as bad practice.
-
-`var` is bound to function scope while `let` and `const` are bound to block scope.\
-This leads to confusing and unintuitive behavior.
-
-TODO: Give some examples
-
-### Always use triple equals `===` over double equals `==` | Equality Checks
-
-### `async` `await` or promises? | Asynchronous operations
-
-Use whichever syntax makes the code more readable.
-
-Only exception is if it affects performance like processing multiple asynchronous operations in parallel instead of sequentially.
-
-Whats more important than having a steadfast rule to stand by is to understand how async await and promise work.\
-What operations are essentially equivalent and what operations execute differently.
-
-[Async await vs promises - StackOverflow](https://stackoverflow.com/questions/53057110/difference-of-using-async-await-vs-promises)
-
-### Write closures, not classes | Data Encapsulation
-<!-- Not called out by linter -->
-> Why not write classes?
-
-Writing function closures instead of classes is more representative of what happens under the hood.
-
-Function closures also has the benefit of avoiding the extremely confusing `this` keyword in JS/TS and instead just reference variables directly.
-
-[Closures vs classes - StackOverflow](https://stackoverflow.com/questions/71670779/closures-vs-classes-in-modern-javascript)
+By JavaScript and general convention.
 
 ## React
 
 [Essential Typescript for React - Blogpost, Jacob Paris](https://www.jacobparis.com/content/react-ts)
 
-### Type `children` prop with ReactNode
+### Follow the Rules of React
 
-## Writing style guide
+<https://react.dev/reference/rules>
 
-### Keep it precise and concise
+By following these you will implicitly write code in a functional style
 
-We are not writing a book.\
-We are writing a guide one should be able to skim through and get the gist of it.
+If you want to learn more about functional programming ask @phibkro.
 
-### Headings containing subheadings should usually tell us what subject or category the subheadings are about.
+### Component names are PascalCased
 
-### Subheadings should be written in imperative commands, like git commits
+```diff
+- function my_component() {
++ function MyComponent() {
+  ...
+}
+```
+
+### Declare named functions over anonymous functions
+
+Make sure you understand that functions in JavaScript are [hoisted](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#function_hoisting)
+
+```diff
+- const myFunction = () => {
++ function myFunction() {
+  ...
+}
+```
+
+
+### ReactNode or ReactElement?
+
+<https://stackoverflow.com/questions/58123398/when-to-use-jsx-element-vs-reactnode-vs-reactelement>
