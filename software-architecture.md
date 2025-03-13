@@ -2,6 +2,16 @@
 
 Vektorprogrammets software architecture visualised with the [C4 Model](https://c4model.com/)
 
+- [Software Architecture](#software-architecture)
+  - [Vektorprogrammet](#vektorprogrammet)
+    - [Vektor's Web System](#vektors-web-system)
+  - [Example diagrams](#example-diagrams)
+    - [C4Context](#c4context)
+    - [C4Container](#c4container)
+    - [C4Component](#c4component)
+    - [C4Dynamic](#c4dynamic)
+    - [C4Deployment](#c4deployment)
+
 ## Vektorprogrammet
 
 ```mermaid
