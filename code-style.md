@@ -119,6 +119,26 @@ Better to spend extra time thinking about organisation and how the code relates 
 
 A pure function is one where the result only depends on its arguments.
 
+This is not a pure function as the mutable variable `amount` could change and affect the result of the `add` function
+
+```ts
+let amount = 5;
+function add(a: number) {
+  return a + amount;
+}
+add(2);
+```
+
+Here is an example of how to rewrite `add` as a pure function
+
+```ts
+let amount = 5;
+function add(a: number, b:number) {
+  return a + b;
+}
+add(2, 5);
+```
+
 ### Avoid explicit type declaration when types can be inferred
 
 ```diff
