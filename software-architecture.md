@@ -32,6 +32,53 @@ title System Context of Vektorprogrammet
   UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="2")
 ```
 
+### Vektor's Web System
+
+```mermaid
+C4Container
+  title Container Context of Vektor's Web System
+
+  Person(visitor, "Besøkende", "En nysgjerrig forelder eller skolerepresentant")
+  Person(team, "Intern Teammedlem", "Medlem av en av Vektors flere interne teams")
+  Person(assistant, "Assistent")
+
+  Rel(assistant, homepage, "Besøker")
+  Rel(visitor, homepage, "Besøker")
+
+  Rel(team, dashboard, "Bruker")
+
+  Container_Boundary(web, "Vektor's Web System") {
+    Container(dashboard, "Kontrollpanel", "CSR, React Router")
+    Container(homepage, "Hjemmesiden", "SSR, React Router")
+
+    Rel(homepage, cms, "Oppdater innhold og generer sider av innhold")
+    Rel(dashboard, api, "Henter og får data", "async JSON/HTTPS")
+
+    Container(api, "API", "REST, Express")
+
+    Rel(cms, api, "Henter data", "async JSON/HTTPS")
+
+    Container(cms, "CMS (Content Management System)", "Strapi")
+
+    Rel(api, db, "Henter og oppdaterer")
+
+    ContainerDb(db, "Hoveddatabasen", "SQL Database")
+  }
+
+  Rel(cms, email, "Sender mail med")
+
+  Rel(email, assistant, "Sends emails", "smpt")
+  Rel(email, team, "Sends emails", "smpt")
+
+  Boundary(ext, "Eksterne servicer") {
+    System_Ext(email, "Resend Email Provider")
+  }
+  
+  UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="1")
+```
+
+## Example diagrams
+
 ### C4Context
 
 ```mermaid
@@ -79,14 +126,6 @@ title System Context of Vektorprogrammet
       UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
 ```
 
-## Containers
-
-```mermaid
-C4Container
-title Vektor Web
-
-```
-
 ### C4Container
 
 ```mermaid
@@ -127,8 +166,6 @@ title Vektor Web
     Rel(backend_api, banking_system, "Uses", "sync/async, XML/HTTPS")
     UpdateRelStyle(backend_api, banking_system, $offsetY="-50", $offsetX="-140")
 ```
-
-## Components
 
 ### C4Component
 
@@ -171,8 +208,6 @@ title Vektor Web
         UpdateRelStyle(mbsfacade, mbs, $offsetY="-40")
 ```
 
-## Usage
-
 ### C4Dynamic
 
 ```mermaid
@@ -193,8 +228,6 @@ title Vektor Web
     UpdateRelStyle(c2, c3, $textColor="red", $offsetX="-40", $offsetY="60")
     UpdateRelStyle(c3, c4, $textColor="red", $offsetY="-40", $offsetX="10")
 ```
-
-## Deployment
 
 ### C4Deployment
 
