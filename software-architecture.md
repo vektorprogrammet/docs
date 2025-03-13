@@ -2,13 +2,13 @@
 
 Vektorprogrammets software architecture visualised with the [C4 Model](https://c4model.com/)
 
-## System Context
+## Vektorprogrammet
 
 ```mermaid
 C4Context
-title Vektorprogrammet v2 System context
+title System Context of Vektorprogrammet
 
-  Person(assistant, "Assistent")
+  Person(assistant, "Assistent", "Vektorassistentmedlem")
   Person(team, "Intern Teammedlem", "Medlem av en av Vektors flere interne teams")
   Person(visitor, "Besøkende", "En nysgjerrig forelder eller skolerepresentant")
 
@@ -17,18 +17,19 @@ title Vektorprogrammet v2 System context
   Rel(visitor, web, "Besøker")
 
   Boundary(vektor, "Vektorprogrammet") {
-    System(web, "Web", "Vektor websystem")
+    System(web, "Web System", "Besøk hjemmesiden. Administrer assistenter og teams")
   }
 
-  BiRel(web, auth, "User authentication")
-  BiRel(web, email, "Sender mail med")
+  Rel(web, email, "Sender mail med")
 
   Boundary(ext, "Eksterne servicer") {
-    System_Ext(auth, "Clerk Authentication")
-    System_Ext(email, "Resend Email Service")
+    System_Ext(email, "Email Provider", "Resend")
   }
+
+  Rel(email, assistant, "Sends emails", "smpt")
+  Rel(email, team, "Sends emails", "smpt")
   
-  UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
+  UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="2")
 ```
 
 ### C4Context
