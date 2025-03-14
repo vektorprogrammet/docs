@@ -8,18 +8,18 @@
       - [Linux: Distro default](#linux-distro-default)
       - [Why install a package manager?](#why-install-a-package-manager)
     - [Node Version Manager](#node-version-manager)
-      - [Mac \& Linux: nvm](#mac--linux-nvm)
+      - [Mac and Linux: nvm](#mac-and-linux-nvm)
       - [Windows: fnm](#windows-fnm)
       - [Why do I need a Node Version Manager](#why-do-i-need-a-node-version-manager)
     - [Node](#node)
       - [nvm](#nvm)
-      - [TODO: fnm](#todo-fnm)
+      - [fnm](#fnm)
       - [Why do I need Node?](#why-do-i-need-node)
       - [Why Node LTS version?](#why-node-lts-version)
     - [pnpm](#pnpm)
       - [Why pnpm?](#why-pnpm)
     - [Docker](#docker)
-      - [Why Docker?](#why-docker)
+      - [Why do I need Docker?](#why-do-i-need-docker)
   - [TODO: Apps \& Websites](#todo-apps--websites)
     - [TODO: GitHub](#todo-github)
     - [TODO: Linear](#todo-linear)
@@ -42,22 +42,18 @@ Backend Required: [Docker](#docker)
 
 #### Mac: Homebrew
 
-Install Homebrew
-
-- [Homebrew: Homepage](https://brew.sh/)
+Install [Homebrew (Homepage)](https://brew.sh/)
 
 #### Windows: UniGetUi
 
-Install UniGetUi(formerly WingetUI)
-
-- [UniGetUi: Homepage](https://www.marticliment.com/unigetui/)
+Install [UniGetUi (Homepage)](https://www.marticliment.com/unigetui/)
 
 #### Linux: Distro default
 
+> Use the package manager bundled with your distro
+
 You're a Linux user.
 You already have an opinion on this.
-
-> Use the package manager bundled with your distro
 
 #### Why install a package manager?
 
@@ -66,17 +62,13 @@ adding, updating, upgrading and deleting packages on your computer.
 
 ### Node Version Manager
 
-#### Mac & Linux: nvm
+#### Mac and Linux: nvm
 
-Install nvm with your chosen package manager.
-
-[nvm: GitHub](https://github.com/nvm-sh/nvm)
+Install [nvm (GitHub)](https://github.com/nvm-sh/nvm) with your chosen package manager.
 
 #### Windows: fnm
 
-Install fnm with UniGetUi
-
-[fnm: GitHub](https://github.com/Schniz/fnm)
+Install [fnm (GitHub)](https://github.com/Schniz/fnm) with UniGetUi
 
 #### Why do I need a Node Version Manager
 
@@ -93,7 +85,11 @@ Install Node LTS version
 nvm install --lts
 ```
 
-#### TODO: fnm
+#### fnm
+
+```sh
+fnm install --lts
+```
 
 #### Why do I need Node?
 
@@ -131,11 +127,18 @@ This takes a lot of disk space when you have multiple projects on your PC.
 pnpm works around this by downloading dependencies globally.
 This lets pnpm reuse the same dependencies with the same versions of different projects.
 
+It is also easier to develop together when we all use the same .lock file.
+
+If you find it annoying to have multiple JS package managers I recommend checking out [Antfu's ni](https://github.com/antfu-collective/ni) which automatically runs commands with the right package managers based on what lock file there is.
+
 ### Docker
 
-Install [Docker Desktop](https://docs.docker.com/desktop) (GUI for Docker)
+Install [Docker Desktop (Official Docs)](https://docs.docker.com/desktop) (GUI for Docker)
 
-#### Why Docker?
+Alternatively,
+install Docker Engine if you don't want the GUI and would rather use the terminal
+
+#### Why do I need Docker?
 
 We use Docker to run a Postgres database for local development.
 
