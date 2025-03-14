@@ -5,12 +5,12 @@ VektorIT's code style which cannot be enforced using linters or formatters.
 - [Code style guide](#code-style-guide)
   - [Principles](#principles)
     - [Readibility is priority number one](#readibility-is-priority-number-one)
-    - [Follow conventions, only break them for VERY good reasons](#follow-conventions-only-break-them-for-very-good-reasons)
+    - [Follow established conventions, only break them for VERY good reasons](#follow-established-conventions-only-break-them-for-very-good-reasons)
     - [Minimise scope when possible](#minimise-scope-when-possible)
   - [Organising your projects](#organising-your-projects)
     - [Prefer long files over many smaller files](#prefer-long-files-over-many-smaller-files)
     - [Avoid folders unless they enhance readability](#avoid-folders-unless-they-enhance-readability)
-    - [Prefer co-location over categorisation (separation of concerns)](#prefer-co-location-over-categorisation-separation-of-concerns)
+    - [Prefer co-location over categorisation / separation of concerns](#prefer-co-location-over-categorisation--separation-of-concerns)
   - [TypeScript](#typescript)
     - [Write pure functions when possible](#write-pure-functions-when-possible)
     - [Avoid explicit type declaration when types can be inferred](#avoid-explicit-type-declaration-when-types-can-be-inferred)
@@ -28,10 +28,10 @@ VektorIT's code style which cannot be enforced using linters or formatters.
 
 The computer can read extremely ugly code and still know what to do.\
 Humans (and LLMs) have a way harder time reading code than compilers.\
-This is why we make sure we write code which can be understood by people,\
+So we make sure we write code which can be understood by people,\
 which keeps the projects easy to maintain.
 
-### Follow conventions, only break them for VERY good reasons
+### Follow established conventions, only break them for VERY good reasons
 
 Helps with readability for both humans and LLMs.
 
@@ -42,7 +42,7 @@ By minimising it, we reduce the amount of variables one needs to keep in their h
 
 ## Organising your projects
 
-This section focuses on how to structure your files and folders.
+This section focuses on how to structure files and folders.
 
 ### Prefer long files over many smaller files
 
@@ -54,7 +54,7 @@ we minimise the variables' scope without adding restrictions or unnecessary fold
 
 ### Avoid folders unless they enhance readability
 
-### Prefer co-location over categorisation (separation of concerns)
+### Prefer co-location over categorisation / separation of concerns
 
 Instead of grouping files by categories easily readable for computers,
 group them by their relation to other files for better human readability.
@@ -109,7 +109,8 @@ From the structure alone, we can infer that
 - `layout.css` is only used within the `/pages` folder
 - `/lib` and `/features`s contents are accessible within the whole repository, as they are placed at the root level of the repository
 
-Files and folders are assumed to have access to files and folders within the same directory(folder). You can imagine in your head that the scope of files trickle down subfolders like a waterfall.
+Files and folders are assumed to have access to files and folders within the same directory/folder.\
+You can imagine that the scope of files cascades down subfolders like a waterfall.
 
 Better to spend extra time thinking about organisation and how the code relates to other code instead of slapping it into a folder letting it rot until some other poor soul has to decipher what files relates to what.
 
