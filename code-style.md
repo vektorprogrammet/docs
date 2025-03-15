@@ -13,7 +13,7 @@ VektorIT's code style which cannot be enforced using linters or formatters.
     - [Prefer co-location over categorisation / separation of concerns](#prefer-co-location-over-categorisation--separation-of-concerns)
   - [TypeScript](#typescript)
     - [Write pure functions when possible](#write-pure-functions-when-possible)
-    - [Avoid explicit type declaration when types can be inferred](#avoid-explicit-type-declaration-when-types-can-be-inferred)
+    - [Explicitly declare function return types, except for React components](#explicitly-declare-function-return-types-except-for-react-components)
     - [Variable names are camelCase](#variable-names-are-camelcase)
     - [Type names are PascalCase](#type-names-are-pascalcase)
   - [React](#react)
@@ -140,10 +140,25 @@ function add(a: number, b:number) {
 add(2, 5);
 ```
 
-### Avoid explicit type declaration when types can be inferred
+### Explicitly declare function return types, except for React components
+
+This makes it easy to understand the function type at a glance.
+
+It also helps make sure functions return what they're supposed to,
+and if the return type changes,
+your code editor can point you to its occurrences which need to be updated.
 
 ```diff
-- function Component(): ReactNode {
+- function add(a: number, b: number) {
++ function add(a: number, b: number): string
+  return `${a}${b}`
+}
+```
+
+We make an exception for React components as they are the only functions written with PascalCase.
+
+```diff
+- function Component(): JSX {
 + function Component() {
   ...
 }
