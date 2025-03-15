@@ -4,7 +4,7 @@ VektorIT's code style which cannot be enforced using linters or formatters.
 
 - [Code style guide](#code-style-guide)
   - [Principles](#principles)
-    - [Readibility is priority number one](#readibility-is-priority-number-one)
+    - [Readability is priority number one](#readability-is-priority-number-one)
     - [Follow established conventions, only break them for VERY good reasons](#follow-established-conventions-only-break-them-for-very-good-reasons)
     - [Minimise scope when possible](#minimise-scope-when-possible)
   - [Organising your projects](#organising-your-projects)
@@ -24,7 +24,7 @@ VektorIT's code style which cannot be enforced using linters or formatters.
 
 ## Principles
 
-### Readibility is priority number one
+### Readability is priority number one
 
 The computer can read extremely ugly code and still know what to do.\
 Humans (and LLMs) have a way harder time reading code than compilers.\
