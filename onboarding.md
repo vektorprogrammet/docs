@@ -117,6 +117,12 @@ Install pnpm globally
 corepack install -g pnpm
 ```
 
+To update your pnpm version run:
+
+```sh
+corepack up
+```
+
 #### Why pnpm?
 
 We use pnpm as we find it better to use than npm which comes with Node.
