@@ -14,6 +14,7 @@ Here are some guides and courses to help you get started.
     - [Handle the game logic](#handle-the-game-logic)
     - [Time Travel](#time-travel)
   - [The rest](#the-rest)
+  - [Additional Resources](#additional-resources)
 
 ## React Fundamentals
 
@@ -83,3 +84,9 @@ but those guides teach you like 80% of React functionality,
 And after that, you're done!
 
 On to the next blazingly fast JavaScript framework..
+
+## Additional Resources
+
+[10 React Hooks Explained // Plus Build your own from Scratch - YouTube](https://youtu.be/TNhaISOUy6Q?si=gPbHXhVdgL8X0kE1)
+
+[React re-renders guide: everything, all at once - Blog post](https://www.developerway.com/posts/react-re-renders-guide)
