@@ -4,6 +4,8 @@
 
 [Software Architecture](software-architecture.md)
 
+[Writing with Markdown](writing-markdown.md)
+
 ## Get Started
 
 [Onboarding](onboarding.md)
