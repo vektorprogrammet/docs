@@ -18,9 +18,9 @@ Vektorprogrammets software architecture visualised with the [C4 Model](https://c
 C4Context
 title System Context of Vektorprogrammet
 
+  Person(visitor, "Besøkende", "En nysgjerrig forelder eller skolerepresentant")
   Person(assistant, "Assistent", "Vektorassistentmedlem")
   Person(team, "Intern Teammedlem", "Medlem av en av Vektors flere interne teams")
-  Person(visitor, "Besøkende", "En nysgjerrig forelder eller skolerepresentant")
 
   Rel(assistant, web, "Besøker")
   Rel(team, web, "Bruker")
@@ -39,7 +39,7 @@ title System Context of Vektorprogrammet
   Rel(email, assistant, "Sends emails", "smpt")
   Rel(email, team, "Sends emails", "smpt")
   
-  UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="2")
+  UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="2")
 ```
 
 ### Web: Container context
