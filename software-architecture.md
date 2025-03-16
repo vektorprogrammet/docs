@@ -48,20 +48,22 @@ title System Context of Vektorprogrammet
 C4Container
   title Container Context of Vektor's Web System
 
+  Person(visitor, "Besøkende", "En nysgjerrig forelder eller skolerepresentant")
   Person(assistant, "Assistent")
   Person(team, "Intern Teammedlem", "Medlem av en av Vektors flere interne teams")
 
+  Rel(visitor, site, "Besøker")
   Rel(assistant, site, "Besøker")
   Rel(assistant, app, "Besøker")
   Rel(team, app, "Bruker")
-  Rel(team, adminpage, "Bruker")
+  Rel(team, adminpage, "Administrerer innhold")
 
   Container_Boundary(web, "Vektor's Web System") {
     Container_Boundary(home, "Hjemmesiden") {
-      Container(site, "Nettside", "SSR, React Router")
+      Container(site, "Nettside", "MPA/SSR, React Router")
 
-      Rel(site, cms, "Henter sideinnhold")
-      Rel(adminpage, cms, "Oppdater innhold")
+      Rel(site, cms, "Henter sideinnhold", "async JSON/HTTPS")
+      Rel(adminpage, cms, "Oppdater innhold", "async JSON/HTTPS")
 
       Container(cms, "CMS API", "Strapi")
 
@@ -71,20 +73,20 @@ C4Container
     }
 
     Container_Boundary(admin, "Admin") {
-      Container(adminpage, "CMS Admin", "Strapi")
+      Container(adminpage, "CMS Adminpanel", "Strapi")
     }
 
 
     Container_Boundary(dashboard, "Kontrollpanel") {
-      Container(app, "Web App", "CSR, React Router")
+      Container(app, "Web App", "SPA/CSR, React Router")
 
       Rel(app, api, "Henter data", "async JSON/HTTPS")
 
       Container(api, "API", "REST, Express")
 
-      Rel(api, db, "Oppdaterer data")
+      Rel(api, db, "Oppdaterer data", "Drizzle ORM")
 
-      ContainerDb(db, "Hoveddatabase", "SQL DB")
+      ContainerDb(db, "DB", "SQL DB")
     }
   }
 
@@ -95,7 +97,7 @@ C4Container
     System_Ext(email, "Email Provider", "Resend")
   }
   
-  UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="3")
+  UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="3")
 ```
 
 ## Example diagrams
