@@ -3,8 +3,8 @@
 Vektorprogrammets software architecture visualised with the [C4 Model](https://c4model.com/)
 
 - [Software Architecture](#software-architecture)
-  - [Vektorprogrammet](#vektorprogrammet)
-    - [Vektor's Web System](#vektors-web-system)
+  - [Vektorprogrammet: System context](#vektorprogrammet-system-context)
+    - [Web: Container context](#web-container-context)
   - [Example diagrams](#example-diagrams)
     - [C4Context](#c4context)
     - [C4Container](#c4container)
@@ -12,7 +12,7 @@ Vektorprogrammets software architecture visualised with the [C4 Model](https://c
     - [C4Dynamic](#c4dynamic)
     - [C4Deployment](#c4deployment)
 
-## Vektorprogrammet
+## Vektorprogrammet: System context
 
 ```mermaid
 C4Context
@@ -27,7 +27,7 @@ title System Context of Vektorprogrammet
   Rel(visitor, web, "Besøker")
 
   Boundary(vektor, "Vektorprogrammet") {
-    System(web, "Web System", "Besøk hjemmesiden. Administrer assistenter og teams")
+    System(web, "Web", "Besøk hjemmesiden. Administrer assistenter og teams")
   }
 
   Rel(web, email, "Sender mail med")
@@ -42,7 +42,7 @@ title System Context of Vektorprogrammet
   UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="2")
 ```
 
-### Vektor's Web System
+### Web: Container context
 
 ```mermaid
 C4Container
