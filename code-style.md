@@ -14,7 +14,6 @@ VektorIT's code style which cannot be enforced using linters or formatters.
   - [TypeScript](#typescript)
     - [Write pure functions when possible](#write-pure-functions-when-possible)
     - [Avoid explicit type declaration when types can be inferred](#avoid-explicit-type-declaration-when-types-can-be-inferred)
-      - [This is not the case for back end code](#this-is-not-the-case-for-back-end-code)
     - [Variable names are camelCase](#variable-names-are-camelcase)
     - [Type names are PascalCase](#type-names-are-pascalcase)
   - [React](#react)
@@ -149,10 +148,6 @@ add(2, 5);
   ...
 }
 ```
-
-#### This is not the case for back end code
-
-In the backend it is more important that types stay consistant. It is also harder to figure out exactly what returntype of a function is just by glancing at it. Therefore please try to explisitly type your functions when writing backend code.
 
 ### Variable names are camelCase
 

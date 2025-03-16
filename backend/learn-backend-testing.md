@@ -14,7 +14,7 @@
 
 ### [Node testrunner](https://nodejs.org/docs/latest-v22.x/api/test.html)
 
-Node testrunner is a built in node module we use to run tests with. It is important that you verify thar you use node version 22 or higher, in order to make this module work as expected.
+Node testrunner is a built in Node module we use to run tests with. It is important that you verify thar you use node version 22 or higher, in order to make this module work as expected.
 
 ### [Node assert](https://nodejs.org/docs/latest-v22.x/api/assert.html)
 

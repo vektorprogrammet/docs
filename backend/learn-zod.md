@@ -35,8 +35,8 @@ We use zod to parse:
 ## Zod learning resources
 
 Intro video to Zod: <https://www.youtube.com/watch?v=L6BE-U3oy80>
-Some zod exersises: <https://github.com/total-typescript/zod-tutorial>
+Some Zod exercises: <https://github.com/total-typescript/zod-tutorial>
 
 Official documentation: <https://zod.dev/>
-Official sourcekode: <https://github.com/colinhacks/zod>
+Official source code: <https://github.com/colinhacks/zod>
 NPM package: <https://www.npmjs.com/package/zod>

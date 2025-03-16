@@ -1,14 +1,14 @@
 # Learn Express
 
 - [Learn Express](#learn-express)
-  - [What is express?](#what-is-express)
+  - [What is Express?](#what-is-express)
     - [What are RESTful APIs?](#what-are-restful-apis)
     - [What are HTTP requests?](#what-are-http-requests)
-  - [Why express?](#why-express)
-  - [How we use express](#how-we-use-express)
+  - [Why Express?](#why-express)
+  - [How we use Express](#how-we-use-express)
   - [Express learning resources](#express-learning-resources)
 
-## What is express?
+## What is Express?
 
 Express is a back end web application framework for building RESTful APIs with Node.js.
 
@@ -35,11 +35,11 @@ Read more about the CRUD operations on Wikipedia:
 <https://en.wikipedia.org/wiki/Create,_read,_update_and_delete>
 <https://no.wikipedia.org/wiki/Opprett,_les,_oppdater_og_slett>
 
-## Why express?
+## Why Express?
 
 We use express because it is one of the most vidley used web application frameworks both in node and in general. It is easy to use and has a good amount of both official documentation and tutorials all availible online.
 
-## How we use express
+## How we use Express
 
 We use express to listen for requests to our server from the frontend. See:
 
