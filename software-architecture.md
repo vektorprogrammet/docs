@@ -48,43 +48,54 @@ title System Context of Vektorprogrammet
 C4Container
   title Container Context of Vektor's Web System
 
-  Person(visitor, "Besøkende", "En nysgjerrig forelder eller skolerepresentant")
-  Person(team, "Intern Teammedlem", "Medlem av en av Vektors flere interne teams")
   Person(assistant, "Assistent")
+  Person(team, "Intern Teammedlem", "Medlem av en av Vektors flere interne teams")
 
-  Rel(assistant, homepage, "Besøker")
-  Rel(visitor, homepage, "Besøker")
-
-  Rel(team, dashboard, "Bruker")
+  Rel(assistant, site, "Besøker")
+  Rel(assistant, app, "Besøker")
+  Rel(team, app, "Bruker")
+  Rel(team, adminpage, "Bruker")
 
   Container_Boundary(web, "Vektor's Web System") {
-    Container(dashboard, "Kontrollpanel", "CSR, React Router")
-    Container(homepage, "Hjemmesiden", "SSR, React Router")
+    Container_Boundary(home, "Hjemmesiden") {
+      Container(site, "Nettside", "SSR, React Router")
 
-    Rel(homepage, cms, "Oppdater innhold og generer sider av innhold")
-    Rel(dashboard, api, "Henter og får data", "async JSON/HTTPS")
+      Rel(site, cms, "Henter sideinnhold")
+      Rel(adminpage, cms, "Oppdater innhold")
 
-    Container(api, "API", "REST, Express")
+      Container(cms, "CMS API", "Strapi")
 
-    Rel(cms, api, "Henter data", "async JSON/HTTPS")
+      Rel(cms, content, "Updates")
 
-    Container(cms, "CMS (Content Management System)", "Strapi")
+      ContainerDb(content, "CMS DB", "SQL DB, Strapi")
+    }
 
-    Rel(api, db, "Henter og oppdaterer")
+    Container_Boundary(admin, "Admin") {
+      Container(adminpage, "CMS Admin", "Strapi")
+    }
 
-    ContainerDb(db, "Hoveddatabasen", "SQL Database")
+
+    Container_Boundary(dashboard, "Kontrollpanel") {
+      Container(app, "Web App", "CSR, React Router")
+
+      Rel(app, api, "Henter data", "async JSON/HTTPS")
+
+      Container(api, "API", "REST, Express")
+
+      Rel(api, db, "Oppdaterer data")
+
+      ContainerDb(db, "Hoveddatabase", "SQL DB")
+    }
   }
-
-  Rel(cms, email, "Sender mail med")
 
   Rel(email, assistant, "Sends emails", "smpt")
   Rel(email, team, "Sends emails", "smpt")
 
   Boundary(ext, "Eksterne servicer") {
-    System_Ext(email, "Resend Email Provider")
+    System_Ext(email, "Email Provider", "Resend")
   }
   
-  UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="1")
+  UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="3")
 ```
 
 ## Example diagrams
