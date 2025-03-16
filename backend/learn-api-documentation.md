@@ -17,7 +17,7 @@
 
 Swagger is a set tools that easier to follow the OpenAPI specification.
 We use the swagger-ui-express tool to host our openapi specification in our api itself.
-We use th swagger-jsdoc tool to write openapi specifications in jsdoc comments directly in the code, to make the specifications easier to write and read, when you can look at the code in the same place.
+We use the swagger-jsdoc NPM package to write openapi specifications in jsdoc comments directly in the code, to make the specifications easier to write and read, when you can look at the code in the same place.
 
 ### [ZodOpenAPI](https://www.npmjs.com/package/zod-openapi)
 
