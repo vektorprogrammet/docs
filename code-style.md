@@ -204,7 +204,6 @@ Make sure you understand that functions in JavaScript are [hoisted](https://deve
 }
 ```
 
-
 ### ReactNode or ReactElement?
 
 <https://stackoverflow.com/questions/58123398/when-to-use-jsx-element-vs-reactnode-vs-reactelement>
