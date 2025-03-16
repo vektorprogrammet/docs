@@ -8,6 +8,8 @@
 
 [Onboarding](onboarding.md)
 
+[Get the most out of VSCode](vscode.md)
+
 [Learn Web Foundations](learn-web-foundations.md)
 
 [Learn React](learn-react.md)
