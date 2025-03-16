@@ -14,15 +14,17 @@
 
 ### [Node testrunner](https://nodejs.org/docs/latest-v22.x/api/test.html)
 
-Node testrunner is a built in Node module we use to run tests with. It is important that you verify thar you use node version 22 or higher, in order to make this module work as expected.
+Node testrunner is a built in Node module we use to run tests with.
+It is important that you verify thar you use Node version 22 or higher, in order to make this module work as expected.
 
 ### [Node assert](https://nodejs.org/docs/latest-v22.x/api/assert.html)
 
-Node assert is a built in node library containing a set of functions for verifying correctedness in tests.
+Node assert is a built in Node library containing a set of functions for verifying correctedness in tests.
 
 ### [Supertest](https://www.npmjs.com/package/supertest)
 
-Supertest is a HTTP testing tool, built on Superagent. We use it to run different HTTP requests to our API in order to check that it returns the correct responses.
+Supertest is a HTTP testing tool, built on Superagent.
+We use it to run different HTTP requests to our API in order to check that it returns the correct responses.
 
 ### [Insomnia](https://insomnia.rest/)
 

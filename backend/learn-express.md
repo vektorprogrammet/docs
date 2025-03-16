@@ -16,7 +16,8 @@ Express is a back end web application framework for building RESTful APIs with N
 
 REST(REpresentational State Transfer) is a architecture style describing how a multimedia system exposed to the internet should behave.
 
-A core principle in REST is that the client and server don't need to know what state the other is in. This makes it easier to create reliable interfaces over the web.
+A core principle in REST is that the client and server don't need to know what state the other is in.
+This makes it easier to create reliable interfaces over the web.
 
 A RESTful api requires the client to send HTTP-requests to the server
 
@@ -29,19 +30,22 @@ Http requests consists of:
 - a header, which allows the client to pass along information about the request
 - an optional message body containing data
 
-There are four basic HTTP request verbs: GET, POST, PUT and delete. These corresponds to the four CRUD operations
+There are four basic HTTP request verbs: GET, POST, PUT and delete.
+These corresponds to the four CRUD operations
 
 Read more about the CRUD operations on Wikipedia:
-<https://en.wikipedia.org/wiki/Create,_read,_update_and_delete>
-<https://no.wikipedia.org/wiki/Opprett,_les,_oppdater_og_slett>
+
+- <https://en.wikipedia.org/wiki/Create,_read,_update_and_delete>
+- <https://no.wikipedia.org/wiki/Opprett,_les,_oppdater_og_slett>
 
 ## Why Express?
 
-We use express because it is one of the most vidley used web application frameworks both in node and in general. It is easy to use and has a good amount of both official documentation and tutorials all availible online.
+We use Express because it is one of the most vidley used web application frameworks both in Node and in general.
+It is easy to use and has a good amount of both official documentation and tutorials all availible online.
 
 ## How we use Express
 
-We use express to listen for requests to our server from the frontend. See:
+We use Express to listen for requests to our server from the frontend. See:
 
 - [src/main](https://github.com/vektorprogrammet/api/blob/main/src/main.ts)
 - [src/routes](https://github.com/vektorprogrammet/api/tree/main/src/routers)
@@ -49,6 +53,7 @@ We use express to listen for requests to our server from the frontend. See:
 ## Express learning resources
 
 RESTful APIs in 100 seconds: <https://www.youtube.com/watch?v=-MTSQjw5DrM>
+
 HTTP request methods: <https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods>
 
 Wikipedia:
@@ -57,6 +62,9 @@ Wikipedia:
 - norwegian: <https://no.wikipedia.org/wiki/Express.js>
 
 Official documentation: <https://expressjs.com/>
+
 Official sourcecode: <https://github.com/expressjs/express>
+
 Official wiki: <https://github.com/expressjs/express/wiki>
+
 NPM package: <https://www.npmjs.com/package/express>

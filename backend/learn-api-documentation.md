@@ -57,4 +57,5 @@ To add an addition to the OpenAPI specification, you need to add a comment follo
 
 ### How to add a scema to the specification
 
-In order to add a Zod schema to the OpenAPI specification, go to [the openapi configuration file](https://github.com/vektorprogrammet/api/blob/main/src/openapi/config.ts). Under components you can add your schema. Remember that when you reference you scema in the specification, use the key assigned it with here.
+In order to add a Zod schema to the OpenAPI specification, go to [the openapi configuration file](https://github.com/vektorprogrammet/api/blob/main/src/openapi/config.ts).
+Under components you can add your schema. Remember that when you reference you scema in the specification, use the key assigned it with here.
