@@ -63,7 +63,7 @@ C4Container
       Container(site, "Nettside", "MPA/SSR, React Router")
 
       Rel(site, cms, "Henter sideinnhold", "async JSON/HTTPS")
-      Rel(adminpage, cms, "Oppdater innhold", "async JSON/HTTPS")
+      Rel(site, api, "Henter data")
 
       Container(cms, "CMS API", "Strapi")
 
@@ -73,6 +73,8 @@ C4Container
     }
 
     Container_Boundary(admin, "Admin") {
+      Rel(adminpage, cms, "Oppdater innhold", "async JSON/HTTPS")
+
       Container(adminpage, "CMS Adminpanel", "Strapi")
     }
 
