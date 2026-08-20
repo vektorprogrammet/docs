@@ -4,7 +4,7 @@
 ## Leder
 
 IT teamets eneste etablerte rolle ovenfra er Lederrollen.
-Den blir valgt på årsmøtet blandt alle medlemmer i hele Vektorprogrammet.
+Den blir valgt på den årlige generalforsamlingen blandt alle medlemmer i hele Vektorprogrammet.
 For mer informasjon om dette se Vektorprogrammets vedtekter.
 
 ### Ansvarsområder
@@ -18,14 +18,16 @@ Rollene burde skrives i dette dokumentet i synkende rekkefølge. Dette betyr at 
 
 Leder har ansvaret for alle oppgaver IT-teamet skal utføre, men kan delegere disse utifra ønske selv.
 
-## Regionsleder
+## Nestleder
 
 ### Ansvarsområder
 
+Assistere lederen i dems ansvarsområder. Nestlederen skal også lede møtene som lederen ikke kan møte på.
+
 ### Oppgaver
 
-- Går i Trondheimsmøter
-- Informerer om hva som skjedde på sist Trondheimsmøte til leder og resten av IT-teamet.
+- Går i styremøter, både Trondheimsstyret og Hovedstyret, dersom leder ikke har mulighet.
+- Tar ansvar for møtene som leder ikke er på.
 
 ## Tekleder
 
@@ -40,6 +42,31 @@ Burde ha oversikt over hele Vektorprogrammets IT-løsninger som helhet.
 - Informere i møte og på Slack dersom det er forandringer i teknologi eller kodepraksis.
 - Være åpen for spørsmål om teknologi og kodepraksis.
 
+## Økonomiansvarlig
+
+### Ansvarsområder
+
+Har ansvaret for å holde styr på budsjettet og pengebruken til teamet. Teamet får utdelt en viss summ fra økonomiteamet en gang i semesteret. Denne rollen samarbeider tett med lederen om sine oppgaver slik at lederen har oversikt dersom styrene har innvendinger.
+
+### Oppgaver
+
+- Sette opp budsjett for teamet.
+- Regelmessig sørge for at budsjettet er oppdatert.
+- Ansvar for å bestille pizza til møtene og føre utlegg for disse.
+
+## Kryssansvarlig
+
+### Ansvarsområder
+
+Være oppdatert med kryssreglene til teamet, og sørge for å tildele kryss på en rettferdig måte etter nevnte regler.
+
+### Oppgaver
+
+- Være kjent med teamets kryssregler.
+- Tildele kryss ved brudd på reglene.
+- Kreve inn bøter.
+- Samarbeide med økonomiansvarlig og leder når pengene skal brukes.
+
 ## Sosialansvarlig
 
 ### Ansvarsområder
@@ -50,4 +77,16 @@ Har ansvaret for at IT-teamet organiserer og blir med på sosiale arrangementer.
 
 - Informere om sosiale arrangementer som nærmer seg i møtene til IT-teamet
 - Organisere sosiale arrangementer IT-teamet har ansvaret for.
-Det er ikke forventet at Sosialansvarlig skal organsiere alt selv, men bare ha generell oversikt og initiativ til sosiale arrangementer.
+Det er ikke forventet at Sosialansvarlig skal organsiere alt selv, men bare ha generell oversikt og initiativ til sosiale arrangementer. Her er det altså lov å sette sammen en sosialkomité for enkeltarrangementer.
+
+## Alle medlemmer
+
+### Ansvarsområder
+
+Ansvar for å bidra til utviklingen av nettsiden og være behjelpelig der det skulle trengs, også utenfor sin tildelte rolle.
+
+### Oppgaver
+
+- Delta på alle møtene man har mulighet til.
+- Følge teamets kryssregler.
+- Utvikle nettsiden til vektorprogrammet.
