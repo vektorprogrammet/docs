@@ -1,4 +1,4 @@
-# docs
+# Vektorprogrammet Official Documentation
 
 [Code Style](code-style.md)
 
@@ -15,3 +15,7 @@
 [Learn Web Foundations](learn-web-foundations.md)
 
 [Learn React](learn-react.md)
+
+## Further reading
+
+[Learn Frontend libriaries we use, like Tanstack Query](learn-frontend-tools.md)
