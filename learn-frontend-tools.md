@@ -90,7 +90,7 @@ for å se spesifikk teknisk kode-info.
 
 Youtube har også utrolig mange tutorials for å lære seg tanstack query.
 
-- [React Query in 100 seconds](https://www.youtube.com/watch?v=1fUBWAETmkk&pp=ygUOdGFuc3RhY2sgcXVlcnk%3D)
+- [React Query in 100 seconds](https://www.youtube.com/watch?v=novnyCaa7To&pp=ygUacmVhY3QgcXVlcnkgaW4gMTAwIHNlY29uZHM%3D)
 - [Tanstack Query - How to become a React Query god](https://www.youtube.com/watch?v=mPaCnwpFvZY)
 
 For deg som liker kort-format legger jeg ved to Youtube Shorts som forklarer noen
