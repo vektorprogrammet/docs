@@ -79,6 +79,18 @@ Har ansvaret for at IT-teamet organiserer og blir med på sosiale arrangementer.
 - Organisere sosiale arrangementer IT-teamet har ansvaret for.
 Det er ikke forventet at Sosialansvarlig skal organsiere alt selv, men bare ha generell oversikt og initiativ til sosiale arrangementer. Her er det altså lov å sette sammen en sosialkomité for enkeltarrangementer.
 
+## Pizzaansvrlig
+
+### Ansvarsområder
+
+Har ansvaret for at pizza blir bestilt til riktig tid, og at den blir hentet til møtet. Samarbeider tett med økonomiansvarlig for å sørge for at pizza passer inn i budsjettet.
+
+### Oppgaver
+
+- Bestille pizza til avtalte møter
+- Sørge for at pizzaen blir hentet til starten av møtet
+- Holde budsjettet oppdatert
+
 ## Alle medlemmer
 
 ### Ansvarsområder
