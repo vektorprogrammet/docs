@@ -19,3 +19,7 @@
 ## Further reading
 
 [Learn Frontend libriaries we use, like Tanstack Query](learn-frontend-tools.md)
+
+## How to update the Hovedstyret image on old website
+
+[Updating the Hovedstyret image](updating-hovedstyret-image.md)
