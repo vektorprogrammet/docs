@@ -1,12 +1,12 @@
 # Updating the Hovedstyret image
 
 The Hovedstyret image must be a `.jpg` file. In the commands below, replace
-`image.jpg` with the name of your image file.
+`your-image.jpg` with the name of your image file.
 
 1. From your computer, upload the new image to the server:
 
    ```sh
-   scp ~/Downloads/image.jpg vektorprogrammet@146.185.181.87:/var/www/vektorprogrammet/web/images
+   scp ~/Downloads/your-image.jpg vektorprogrammet@146.185.181.87:/var/www/vektorprogrammet/web/images
    ```
 
 2. Connect to the server and go to the images folder:
@@ -21,5 +21,5 @@ The Hovedstyret image must be a `.jpg` file. In the commands below, replace
 
    ```sh
    mv HS_22.jpg HS_22_old.jpg
-   mv image.jpg HS_22.jpg
+   mv your-image.jpg HS_22.jpg
    ```
